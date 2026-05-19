@@ -4,6 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import authRoutes from "@/routes/auth.routes";
+import leadRoutes from "@/routes/lead.routes";
 import { errorHandler } from "@/middlewares/error.middleware";
 
 const app = express();
@@ -19,6 +20,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/leads", leadRoutes);
 
 app.use((_req, res) => {
 	res.status(404).json({ success: false, message: "Route not found" });
