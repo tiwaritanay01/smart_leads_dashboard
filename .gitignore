@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Env files
+.env
+
+# Build outputs
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor config
+.vscode/
+
+# Assignment docs
+*.md
+*.pdf
