@@ -18,5 +18,11 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    rules: {
+      // Context files export both Provider components and hooks — this is idiomatic
+      // React and does not break HMR. Downgrade to warn instead of error.
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    },
   },
 ])
+

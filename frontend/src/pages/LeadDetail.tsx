@@ -9,6 +9,7 @@ import Spinner from "@/components/ui/Spinner";
 import LeadFormModal from "@/components/leads/LeadFormModal";
 import RoleGuard from "@/components/auth/RoleGuard";
 import { UserRole } from "@/types/user";
+import { LeadStatus, LeadSource } from "@/types/lead";
 import { useLeadDetail } from "@/hooks/useLeadDetail";
 import { useUpdateLead } from "@/hooks/useUpdateLead";
 import { useDeleteLead } from "@/hooks/useDeleteLead";
@@ -26,8 +27,8 @@ const LeadDetail = () => {
   const handleUpdate = async (payload: {
     name: string;
     email: string;
-    status: "New" | "Contacted" | "Qualified" | "Lost";
-    source: "Website" | "Instagram" | "Referral";
+    status: LeadStatus;
+    source: LeadSource;
   }) => {
     if (!id) {
       return;
@@ -104,13 +105,13 @@ const LeadDetail = () => {
         </div>
       }
     >
-      <div className="rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-soft">
+      <div className="rounded-3xl border border-ink/10 bg-white/80 p-6 shadow-soft dark:border-white/10 dark:bg-white/5">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="font-display text-2xl font-semibold text-ink dark:text-white/90">
               {lead.name}
             </h2>
-            <p className="text-sm text-slate">{lead.email}</p>
+            <p className="text-sm text-slate dark:text-white/50">{lead.email}</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Badge label={lead.status} tone={lead.status === "Lost" ? "ember" : "mint"} />
@@ -118,19 +119,19 @@ const LeadDetail = () => {
           </div>
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-ink/10 bg-sand/40 p-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate">
+          <div className="rounded-2xl border border-ink/10 bg-sand/40 p-4 dark:border-white/10 dark:bg-white/5">
+            <p className="text-xs uppercase tracking-[0.3em] text-slate dark:text-white/40">
               Created at
             </p>
-            <p className="mt-2 text-lg font-semibold text-ink">
+            <p className="mt-2 text-lg font-semibold text-ink dark:text-white/90">
               {formatDate(lead.createdAt)}
             </p>
           </div>
-          <div className="rounded-2xl border border-ink/10 bg-sand/40 p-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate">
+          <div className="rounded-2xl border border-ink/10 bg-sand/40 p-4 dark:border-white/10 dark:bg-white/5">
+            <p className="text-xs uppercase tracking-[0.3em] text-slate dark:text-white/40">
               Status
             </p>
-            <p className="mt-2 text-lg font-semibold text-ink">
+            <p className="mt-2 text-lg font-semibold text-ink dark:text-white/90">
               {lead.status}
             </p>
           </div>

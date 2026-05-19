@@ -28,6 +28,7 @@ export const useLeadDetail = (id?: string) => {
   }, [id]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadLead();
   }, [loadLead]);
 

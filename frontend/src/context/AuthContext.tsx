@@ -2,7 +2,6 @@ import React, {
   createContext,
   useCallback,
   useContext,
-  useEffect,
   useMemo,
   useState
 } from "react";
@@ -25,21 +24,10 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export const AuthProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [token, setToken] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const storedUser = getStoredUser();
-    const storedToken = getAuthToken();
-
-    if (storedUser && storedToken) {
-      setUser(storedUser);
-      setToken(storedToken);
-    }
-
-    setIsLoading(false);
-  }, []);
+  const [user, setUser] = useState<User | null>(() => getStoredUser());
+  const [token, setToken] = useState<string | null>(() => getAuthToken());
+  // isLoading is false immediately since we read synchronously from localStorage
+  const [isLoading] = useState(false);
 
   const login = useCallback((newToken: string, newUser: User): void => {
     setStoredAuth(newToken, newUser);

@@ -1,4 +1,4 @@
-import type { FilterQuery } from "mongoose";
+import mongoose, { type QueryFilter } from "mongoose";
 import { LeadModel, LeadDocument } from "@/models/Lead";
 import type { ILead, LeadSource, LeadStatus } from "@/types/lead";
 import type {
@@ -24,8 +24,8 @@ const buildQuery = (filters: {
   status?: LeadStatus;
   source?: LeadSource;
   search?: string;
-}): FilterQuery<LeadDocument> => {
-  const query: FilterQuery<LeadDocument> = {};
+}): QueryFilter<LeadDocument> => {
+  const query: QueryFilter<LeadDocument> = {};
 
   if (filters.status) {
     query.status = filters.status;
