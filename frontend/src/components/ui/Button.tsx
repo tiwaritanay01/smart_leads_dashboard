@@ -21,8 +21,8 @@ const Button = ({
     "inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-70";
 
   const variants: Record<ButtonVariant, string> = {
-    primary: "bg-ink text-white shadow-soft hover:bg-ink/90",
-    ghost: "border border-ink/10 bg-white/70 text-ink hover:bg-white",
+    primary: "bg-ink text-white shadow-soft hover:bg-ink/90 dark:bg-white/90 dark:text-ink dark:hover:bg-white",
+    ghost: "border border-ink/10 bg-white/70 text-ink hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white/80 dark:hover:bg-white/10",
     danger: "bg-ember text-white shadow-soft hover:bg-ember/90"
   };
 

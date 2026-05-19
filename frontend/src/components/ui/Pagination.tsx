@@ -54,10 +54,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
           type="button"
           onClick={() => typeof page === "number" && onPageChange(page)}
           className={cn(
-            "h-10 min-w-[2.5rem] rounded-full border border-ink/10 px-3 text-sm font-semibold",
+            "h-10 min-w-[2.5rem] rounded-full border border-ink/10 px-3 text-sm font-semibold dark:border-white/10",
             page === currentPage
-              ? "bg-ink text-white"
-              : "bg-white/70 text-ink",
+              ? "bg-ink text-white dark:bg-white/90 dark:text-ink"
+              : "bg-white/70 text-ink dark:bg-white/5 dark:text-white/70",
             typeof page !== "number" && "cursor-default"
           )}
           disabled={typeof page !== "number"}

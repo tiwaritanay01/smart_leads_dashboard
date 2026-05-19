@@ -44,7 +44,7 @@ const LeadsTable = ({
         {Array.from({ length: 6 }).map((_, index) => (
           <div
             key={index}
-            className="h-14 animate-pulse rounded-2xl border border-ink/10 bg-white/70"
+            className="h-14 animate-pulse rounded-2xl border border-ink/10 bg-white/70 dark:border-white/10 dark:bg-white/5"
           />
         ))}
       </div>
@@ -65,9 +65,9 @@ const LeadsTable = ({
   }
 
   return (
-    <div className="overflow-x-auto rounded-3xl border border-ink/10 bg-white/80 shadow-soft">
+    <div className="overflow-x-auto rounded-3xl border border-ink/10 bg-white/80 shadow-soft dark:border-white/10 dark:bg-white/5">
       <table className="w-full min-w-[720px] text-left text-sm">
-        <thead className="bg-sand/70 text-xs uppercase tracking-[0.2em] text-slate">
+        <thead className="bg-sand/70 text-xs uppercase tracking-[0.2em] text-slate dark:bg-white/5 dark:text-white/40">
           <tr>
             <th className="px-6 py-4">Name</th>
             <th className="px-6 py-4">Email</th>
@@ -79,8 +79,8 @@ const LeadsTable = ({
         </thead>
         <tbody>
           {leads.map((lead) => (
-            <tr key={lead._id} className="border-t border-ink/10">
-              <td className="px-6 py-4 font-semibold text-ink">
+            <tr key={lead._id} className="border-t border-ink/10 dark:border-white/5">
+              <td className="px-6 py-4 font-semibold text-ink dark:text-white/90">
                 <Link
                   to={`/leads/${lead._id}`}
                   className="transition hover:text-ember"
@@ -88,14 +88,14 @@ const LeadsTable = ({
                   {lead.name}
                 </Link>
               </td>
-              <td className="px-6 py-4 text-slate">{lead.email}</td>
+              <td className="px-6 py-4 text-slate dark:text-white/50">{lead.email}</td>
               <td className="px-6 py-4">
                 <Badge label={lead.status} tone={statusTone(lead.status)} />
               </td>
               <td className="px-6 py-4">
                 <Badge label={lead.source} tone={sourceTone(lead.source)} />
               </td>
-              <td className="px-6 py-4 text-slate">
+              <td className="px-6 py-4 text-slate dark:text-white/50">
                 {formatDate(lead.createdAt)}
               </td>
               <td className="px-6 py-4">

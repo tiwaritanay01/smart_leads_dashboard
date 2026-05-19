@@ -20,7 +20,7 @@ interface LeadFiltersProps {
 
 const LeadFilters = ({ status, source, search, sort, onChange, onClear }: LeadFiltersProps) => {
   return (
-    <div className="grid gap-4 rounded-3xl border border-ink/10 bg-white/70 p-6 shadow-soft md:grid-cols-[1.2fr_1fr_1fr_1fr_auto]">
+    <div className="grid gap-4 rounded-3xl border border-ink/10 bg-white/70 p-6 shadow-soft dark:border-white/10 dark:bg-white/5 md:grid-cols-[1.2fr_1fr_1fr_1fr_auto]">
       <Input
         label="Search"
         placeholder="Search by name or email"

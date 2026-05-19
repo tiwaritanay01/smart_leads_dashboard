@@ -131,12 +131,12 @@ const Dashboard = () => {
           {stats.map((item) => (
             <div
               key={item.label}
-              className="rounded-3xl border border-ink/10 bg-white/80 p-5 shadow-soft"
+              className="rounded-3xl border border-ink/10 bg-white/80 p-5 shadow-soft dark:border-white/10 dark:bg-white/5"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-slate">
+              <p className="text-xs uppercase tracking-[0.3em] text-slate dark:text-white/40">
                 {item.label}
               </p>
-              <p className="mt-2 font-display text-3xl font-semibold text-ink">
+              <p className="mt-2 font-display text-3xl font-semibold text-ink dark:text-white/90">
                 {item.value}
               </p>
             </div>
@@ -162,7 +162,7 @@ const Dashboard = () => {
         />
 
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-slate">
+          <p className="text-sm text-slate dark:text-white/40">
             Page {filters.page ?? 1} of {totalPages} • {total} total leads
           </p>
           <Pagination

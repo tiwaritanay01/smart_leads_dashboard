@@ -35,15 +35,15 @@ const Modal = ({ isOpen, title, onClose, children }: ModalProps) => {
         role="button"
         tabIndex={-1}
       />
-      <div className="relative w-full max-w-lg rounded-3xl border border-ink/10 bg-white/95 p-6 shadow-soft">
+      <div className="relative w-full max-w-lg rounded-3xl border border-ink/10 bg-white/95 p-6 shadow-soft dark:border-white/10 dark:bg-[#1a1a22]/95">
         <div className="flex items-center justify-between gap-4">
-          <h3 className="font-display text-xl font-semibold text-ink">
+          <h3 className="font-display text-xl font-semibold text-ink dark:text-white/90">
             {title}
           </h3>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full border border-ink/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate"
+            className="rounded-full border border-ink/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate dark:border-white/10 dark:text-white/50 dark:hover:bg-white/10"
           >
             Close
           </button>
