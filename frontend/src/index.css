@@ -58,3 +58,24 @@ body {
 #root {
   min-height: 100vh;
 }
+
+@layer utilities {
+  /*
+    Keep normal dark-mode utilities intact. Instead of globally overriding
+    `.dark:text-white/30`, only force native `<option>` text to remain dark
+    because browser dropdown menus use a white background even in dark mode.
+  */
+
+  /* Ensure native select option text is readable (black on white dropdowns) */
+  select option,
+  select optgroup option,
+  option {
+    color: #0f0f14 !important;
+    background-color: #ffffff !important;
+  }
+
+  /* For extra safety, force option text inside any dropdown-like element */
+  .shadow-sm option {
+    color: #0f0f14 !important;
+  }
+}

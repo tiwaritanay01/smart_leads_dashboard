@@ -18,8 +18,8 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
     const selectId = id ?? label.toLowerCase().replace(/\s+/g, "-");
 
     return (
-      <label className="flex w-full flex-col gap-2 text-sm font-medium text-slate dark:text-white/50">
-        <span className="text-xs uppercase tracking-[0.2em] text-slate/80 dark:text-white/30">
+      <label className="flex w-full flex-col gap-2 text-sm font-medium text-ink dark:text-white/50">
+        <span className="text-xs uppercase tracking-[0.2em] text-ink/80 dark:text-white/30">
           {label}
         </span>
         <select

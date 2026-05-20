@@ -44,11 +44,11 @@ const Login = () => {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-md rounded-3xl border border-ink/10 bg-white/90 p-8 shadow-soft">
         <div className="mb-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-slate">Sign in</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-ink">Sign in</p>
           <h1 className="font-display text-3xl font-semibold text-ink">
             Welcome to Smart Leads
           </h1>
-          <p className="mt-2 text-sm text-slate">
+          <p className="mt-2 text-sm text-ink">
             Track every opportunity and stay on top of your pipeline.
           </p>
         </div>
@@ -71,7 +71,7 @@ const Login = () => {
             Sign in
           </Button>
         </form>
-        <p className="mt-6 text-sm text-slate">
+        <p className="mt-6 text-sm text-ink">
           New here?{" "}
           <Link className="font-semibold text-ink" to="/register">
             Create an account
