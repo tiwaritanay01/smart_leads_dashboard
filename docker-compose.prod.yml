@@ -12,7 +12,7 @@ services:
       dockerfile: Dockerfile
     image: smart_leads_backend:latest
     env_file:
-      - ./backend/.env
+      - ./backend/.env.production
     ports:
       - '5000:5000'
     depends_on:
@@ -24,11 +24,17 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     image: smart_leads_frontend:latest
+    env_file:
+      - ./frontend/.env.production
     ports:
       - '80:80'
     depends_on:
       - backend
     restart: unless-stopped
+
+networks:
+  app_network:
+    driver: bridge
 
 volumes:
   mongo_data:

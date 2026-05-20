@@ -6,11 +6,22 @@ import cookieParser from "cookie-parser";
 import authRoutes from "@/routes/auth.routes";
 import leadRoutes from "@/routes/lead.routes";
 import { errorHandler } from "@/middlewares/error.middleware";
+import { env } from "@/config/env";
 
 const app = express();
 
 app.use(helmet());
-app.use(cors());
+// Configure CORS for production using FRONTEND_ORIGIN env var (comma-separated list allowed)
+const origin = env.FRONTEND_ORIGIN
+	? env.FRONTEND_ORIGIN.split(",").map((s) => s.trim())
+	: true;
+
+app.use(
+	cors({
+		origin,
+		credentials: true
+	})
+);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());

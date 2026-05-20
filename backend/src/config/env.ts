@@ -8,7 +8,8 @@ const EnvSchema = z.object({
   JWT_SECRET: z.string().min(1, "JWT_SECRET is required"),
   PORT: z.coerce.number().int().positive(),
   NODE_ENV: z.enum(["development", "test", "production"]),
-  JWT_EXPIRES_IN: z.string().min(1, "JWT_EXPIRES_IN is required")
+  JWT_EXPIRES_IN: z.string().min(1, "JWT_EXPIRES_IN is required"),
+  FRONTEND_ORIGIN: z.string().optional()
 });
 
 const result = EnvSchema.safeParse(process.env);
