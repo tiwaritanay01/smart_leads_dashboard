@@ -29,9 +29,10 @@ services:
     environment:
       NODE_ENV: production
       PORT: 5000
-      MONGO_URI: mongodb://mongodb:27017/smart_leads
-      JWT_SECRET: ${JWT_SECRET}
-      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      # MONGO_URI: mongodb://mongodb:27017/smart_leads
+      MONGO_URI: mongodb+srv://smart_leads_admin:smart123@cluster0.whp9cs1.mongodb.net/?appName=Cluster0
+      JWT_SECRET: b072e1cbd59f1dafdbb1c365a5bf43fd0e6779d074e4e000978ebb84f791f3bb
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-70d}
     ports:
       - "5000:5000"
     networks:
