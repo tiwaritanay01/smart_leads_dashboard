@@ -10,6 +10,11 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   let message = "Internal server error";
   let errors: string[] | undefined;
 
+  // Log the actual error for debugging
+  if (!(err instanceof AppError)) {
+    console.error("Unhandled error:", err);
+  }
+
   if (err instanceof AppError) {
     statusCode = err.statusCode;
     message = err.message;

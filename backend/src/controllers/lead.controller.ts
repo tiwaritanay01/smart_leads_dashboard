@@ -20,8 +20,9 @@ import {
 } from "@/services/lead.service";
 
 export const listLeads = asyncHandler(async (req: Request, res: Response) => {
-  const query = req.query as unknown as LeadQueryInput;
+  const query = (req as any).validatedQuery as LeadQueryInput;
   const { leads, total } = await getLeads(query);
+  
   const totalPages = Math.ceil(total / query.limit);
 
   const payload: PaginatedResponse<ILead> = {
@@ -88,7 +89,7 @@ export const deleteLeadRecord = asyncHandler(async (req: Request, res: Response)
 });
 
 export const exportLeadsCsv = asyncHandler(async (req: Request, res: Response) => {
-  const query = req.query as unknown as LeadQueryInput;
+  const query = (req as any).validatedQuery as LeadQueryInput;
   const leads = await exportLeads(query);
   const csv = leadsToCsv(leads);
 
