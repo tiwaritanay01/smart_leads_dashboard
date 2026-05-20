@@ -21,5 +21,9 @@ Thumbs.db
 .vscode/
 
 # Assignment docs
+# Assignment docs
 *.md
 *.pdf
+
+# Manual checklist (intentionally ignored locally)
+MANUAL_TEST_CHECKLIST.md
