@@ -23,6 +23,7 @@ Thumbs.db
 # Assignment docs
 # Assignment docs
 *.md
+!README.md
 *.pdf
 
 # Manual checklist (intentionally ignored locally)
