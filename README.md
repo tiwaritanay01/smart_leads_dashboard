@@ -498,4 +498,5 @@ MIT License – See LICENSE file for details.
 - Frontend: https://smartleadsdashboard-smoky.vercel.app
 - Backend: https://smart-leads-dashboard-ccfi.onrender.com
 Access the live site for reviewing from here : https://smartleadsdashboard-smoky.vercel.app
+video demo drive folder link : https://drive.google.com/drive/folders/1gnXfPJPbGuGoNLrSxSbHpS-P11VeivG8?usp=sharing
 
